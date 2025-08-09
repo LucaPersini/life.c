@@ -1,7 +1,6 @@
 //A really basic game of life implementation in C
 #include <stdio.h>
 #include <stdlib.h>
-#include <assert.h>
 #include <unistd.h>
 
 #define GRID_ROWS 20
@@ -122,6 +121,7 @@ void blinker(char *grid) {
 	set_state(10, 12, grid, ALIVE);
 }
 
+//Set the toad pattern
 void toad(char *grid) {
 	set_state(8, 8, grid, ALIVE);
 	set_state(9, 8, grid, ALIVE);
@@ -129,7 +129,6 @@ void toad(char *grid) {
 	set_state(7, 7, grid, ALIVE);
 	set_state(8, 7, grid, ALIVE);
 	set_state(9, 7, grid, ALIVE);
-	
 }
 
 int main() {
@@ -138,9 +137,7 @@ int main() {
 	char new_grid[N_CELLS];
 	set_grid(old_grid);
 	set_grid(new_grid);
-	// glider(old_grid);
-	// blinker(old_grid);
-	toad(old_grid);
+	glider(old_grid);
 	print_grid(old_grid);
 
 	//Game loop
